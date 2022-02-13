@@ -1,11 +1,13 @@
 import React from "react";
+import { ThemeProvider } from "@mui/material";
+import theme from "./ui/Theme";
 import Header from "./ui/Header";
 
 function App() {
   return (
-    <div className="App">
+    <ThemeProvider theme={theme}>
       <Header />Hello!
-    </div>
+    </ThemeProvider>
   );
 }
 
