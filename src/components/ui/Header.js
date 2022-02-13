@@ -1,5 +1,13 @@
 import React from "react";
-import { AppBar, Toolbar, useScrollTrigger } from "@mui/material";
+import { AppBar, Toolbar, useScrollTrigger, Typography } from "@mui/material";
+import { makeStyles } from "@mui/styles"
+
+const useStyles = makeStyles(theme => ({
+    toolbarMargin: {
+        ...theme.mixins.toolbar,
+
+    }
+}))
 
 function ElevationScroll({ children }) {
     // Note that you normally won't need to set the window ref as useScrollTrigger
@@ -17,13 +25,17 @@ function ElevationScroll({ children }) {
 
 
 export default function Header() {
+    const classes = useStyles()
     return (
-        <ElevationScroll>
-            <AppBar position="fixed">
-                <Toolbar>
-                    Arc Development
-                </Toolbar>
-            </AppBar>
-        </ElevationScroll>
+        <React.Fragment>
+            <ElevationScroll>
+                <AppBar position="fixed">
+                    <Toolbar>
+                        <Typography variant="h3">Arc Development</Typography>
+                    </Toolbar>
+                </AppBar>
+            </ElevationScroll>
+            <div className={classes.toolbarMargin}></div>
+        </React.Fragment>
     )
 }
