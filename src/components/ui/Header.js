@@ -1,24 +1,36 @@
 import React from "react";
 import { AppBar, Toolbar, useScrollTrigger, Tabs, Tab } from "@mui/material";
 import { makeStyles } from "@mui/styles"
+import { styled } from "@mui/material/styles";
 import logo from "../../assets/logo.svg";
 
 const useStyles = makeStyles(theme => ({
-    toolbarMargin: {
-        ...theme.mixins.toolbar,
-        marginBottom: "3em"
-    },
-    logo: {
-        height: "7em"
-    },
-    tabContainer: {
-        marginLeft: "auto"
-    },
-    tab: {
-        ...theme.typography.tab,
-        minWidth: 10,
-        marginLeft: "25px"
-    }
+    // toolbarMargin: {
+    //     ...theme.mixins.toolbar,
+    //     marginBottom: "3em"
+    // },
+    // logo: {
+    //     height: "7em"
+    // },
+    // tabContainer: {
+    //     marginLeft: "auto"
+    // },
+    // tab: {
+    //     ...theme.typography.tab,
+    //     minWidth: 10,
+    //     marginLeft: "25px"
+    // }
+}))
+
+const NavTab = styled(Tab)(({ theme }) => ({
+    ...theme.typography.tab,
+    minWidth: 10,
+    marginLeft: "25px"
+}))
+
+const ToolbarMargin = styled("div")(({ theme }) => ({
+    ...theme.mixins.toolbar,
+    marginBottom: "3em"
 }))
 
 function ElevationScroll({ children }) {
@@ -43,18 +55,18 @@ export default function Header() {
             <ElevationScroll>
                 <AppBar position="fixed">
                     <Toolbar disableGutters>
-                        <img className={classes.logo} alt="company logo" src={logo} />
-                        <Tabs className={classes.tabContainer}>
-                            <Tab className={classes.tab} label="Home" />
-                            <Tab className={classes.tab} label="Services" />
-                            <Tab className={classes.tab} label="The Revolution" />
-                            <Tab className={classes.tab} label="About Us" />
-                            <Tab className={classes.tab} label="Contact" />
+                        <img style={{ height: "7em" }} alt="company logo" src={logo} />
+                        <Tabs sx={{ marginLeft: "auto" }} >
+                            <NavTab label="Home" />
+                            <NavTab label="Services" />
+                            <NavTab label="The Revolution" />
+                            <NavTab label="About Us" />
+                            <NavTab label="Contact" />
                         </Tabs>
                     </Toolbar>
                 </AppBar>
             </ElevationScroll>
-            <div className={classes.toolbarMargin}></div>
+            <ToolbarMargin />
         </React.Fragment>
     )
 }
