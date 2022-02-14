@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar, Toolbar, useScrollTrigger } from "@mui/material";
+import { AppBar, Toolbar, useScrollTrigger, Tabs, Tab } from "@mui/material";
 import { makeStyles } from "@mui/styles"
 import logo from "../../assets/logo.svg";
 
@@ -10,6 +10,14 @@ const useStyles = makeStyles(theme => ({
     },
     logo: {
         height: "7em"
+    },
+    tabContainer: {
+        marginLeft: "auto"
+    },
+    tab: {
+        ...theme.typography.tab,
+        minWidth: 10,
+        marginLeft: "25px"
     }
 }))
 
@@ -36,6 +44,13 @@ export default function Header() {
                 <AppBar position="fixed">
                     <Toolbar disableGutters>
                         <img className={classes.logo} alt="company logo" src={logo} />
+                        <Tabs className={classes.tabContainer}>
+                            <Tab className={classes.tab} label="Home" />
+                            <Tab className={classes.tab} label="Services" />
+                            <Tab className={classes.tab} label="The Revolution" />
+                            <Tab className={classes.tab} label="About Us" />
+                            <Tab className={classes.tab} label="Contact" />
+                        </Tabs>
                     </Toolbar>
                 </AppBar>
             </ElevationScroll>
