@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   AppBar,
   Toolbar,
@@ -64,18 +64,30 @@ function ElevationScroll({ children }) {
 
 export default function Header() {
   const classes = useStyles();
+  const [value, setValue] = useState(0);
+  const handleChange = (e, value) => {
+    setValue(value);
+  };
   return (
     <React.Fragment>
       <ElevationScroll>
         <AppBar position="fixed">
           <Toolbar disableGutters>
             <img style={{ height: "7em" }} alt="company logo" src={logo} />
-            <Tabs sx={{ marginLeft: "auto" }}>
-              <NavTab label="Home" />
-              <NavTab label="Services" />
-              <NavTab label="The Revolution" />
-              <NavTab label="About Us" />
-              <NavTab label="Contact" />
+            <Tabs
+              value={value}
+              onChange={handleChange}
+              sx={{
+                marginLeft: "auto",
+              }}
+              textColor="secondary"
+              indicatorColor="secondary"
+            >
+              <NavTab value={0} label="Home" />
+              <NavTab value={1} label="Services" />
+              <NavTab value={2} label="The Revolution" />
+              <NavTab value={3} label="About Us" />
+              <NavTab value={4} label="Contact" />
             </Tabs>
             <EstimateButton variant="contained" color="secondary">
               Free Estimate
