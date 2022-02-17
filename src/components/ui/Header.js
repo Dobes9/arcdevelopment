@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   AppBar,
   Toolbar,
@@ -83,11 +84,21 @@ export default function Header() {
               textColor="secondary"
               indicatorColor="secondary"
             >
-              <NavTab value={0} label="Home" />
-              <NavTab value={1} label="Services" />
-              <NavTab value={2} label="The Revolution" />
-              <NavTab value={3} label="About Us" />
-              <NavTab value={4} label="Contact" />
+              <NavTab value={0} label="Home" to="/" component={Link} />
+              <NavTab
+                value={1}
+                label="Services"
+                to="services"
+                component={Link}
+              />
+              <NavTab
+                value={2}
+                label="The Revolution"
+                to="revolution"
+                component={Link}
+              />
+              <NavTab value={3} label="About Us" to="about" component={Link} />
+              <NavTab value={4} label="Contact" to="contact" component={Link} />
             </Tabs>
             <EstimateButton variant="contained" color="secondary">
               Free Estimate

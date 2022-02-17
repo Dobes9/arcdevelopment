@@ -1,5 +1,5 @@
 import { ThemeContext } from "@emotion/react";
-import { createTheme } from "@mui/material";
+import { createTheme } from "@mui/material/styles";
 
 const arcBlue = "#0b72b9";
 const arcOrange = "#ffba60";
