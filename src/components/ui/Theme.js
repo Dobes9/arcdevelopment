@@ -1,29 +1,35 @@
 import { ThemeContext } from "@emotion/react";
 import { createTheme } from "@mui/material";
 
-const arcBlue = "#0b72b9"
-const arcOrange = "#ffba60"
+const arcBlue = "#0b72b9";
+const arcOrange = "#ffba60";
 
 export default createTheme({
-    palette: {
-        common: {
-            blue: arcBlue,
-            orange: arcOrange
-        },
-        primary: {
-            main: arcBlue
-        },
-        secondary: {
-            main: arcOrange
-        }
+  palette: {
+    common: {
+      blue: arcBlue,
+      orange: arcOrange,
     },
-    typography: {
-        tab: {
-            fontFamily: "Raleway",
-            textTransform: "none",
-            fontWeight: 700,
-            fontSize: "1rem",
-            color: "whitesmoke"
-        }
-    }
-})
+    primary: {
+      main: arcBlue,
+    },
+    secondary: {
+      main: arcOrange,
+    },
+  },
+  typography: {
+    tab: {
+      fontFamily: "Raleway",
+      textTransform: "none",
+      fontWeight: 700,
+      fontSize: "1rem",
+      color: "whitesmoke",
+    },
+    estimate: {
+      fontFamily: "Pacifico",
+      fontSize: "1rem",
+      textTransform: "none",
+      color: "white",
+    },
+  },
+});

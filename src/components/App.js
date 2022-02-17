@@ -6,7 +6,8 @@ import Header from "./ui/Header";
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Header />Hello!
+      <Header />
+      Hello!
     </ThemeProvider>
   );
 }
