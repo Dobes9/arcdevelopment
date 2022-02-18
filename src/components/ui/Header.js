@@ -10,27 +10,8 @@ import {
   Menu,
   MenuItem,
 } from "@mui/material";
-import { makeStyles } from "@mui/styles";
 import { styled } from "@mui/material/styles";
 import logo from "../../assets/logo.svg";
-
-const useStyles = makeStyles((theme) => ({
-  // toolbarMargin: {
-  //     ...theme.mixins.toolbar,
-  //     marginBottom: "3em"
-  // },
-  // logo: {
-  //     height: "7em"
-  // },
-  // tabContainer: {
-  //     marginLeft: "auto"
-  // },
-  // tab: {
-  //     ...theme.typography.tab,
-  //     minWidth: 10,
-  //     marginLeft: "25px"
-  // }
-}));
 
 const NavTab = styled(Tab)(({ theme }) => ({
   ...theme.typography.tab,
@@ -73,7 +54,6 @@ function ElevationScroll({ children }) {
 }
 
 export default function Header() {
-  const classes = useStyles();
   const [value, setValue] = useState(0);
   const [anchorEl, setAnchorEl] = useState(null);
   const [open, setOpen] = useState(false);
